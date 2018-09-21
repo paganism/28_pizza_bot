@@ -1,6 +1,3 @@
-# Here will be catalog models for SQLAlchemy
-
-# FIXME move catalog to db
 catalog = [
     {
         'title': 'Маргарита',
