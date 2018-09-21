@@ -1,6 +1,3 @@
-import argparse
-import json
-import sys
 from server import app
 from models import Pizza, Choices, db
 from sqlalchemy import exc
