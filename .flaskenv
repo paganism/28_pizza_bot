@@ -1,2 +1,4 @@
 FLASK_APP=server.py
 SECRET_KEY='your secret key'
+BASIC_AUTH_USERNAME ='admin'
+BASIC_AUTH_PASSWORD ='1234'
