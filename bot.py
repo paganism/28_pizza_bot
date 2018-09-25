@@ -6,7 +6,6 @@ from os import getenv
 from catalog import catalog
 
 TOKEN = getenv('BOT_TOKEN')
-print(TOKEN)
 if not TOKEN:
     raise Exception('BOT_TOKEN should be specified')
 
