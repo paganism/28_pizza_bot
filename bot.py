@@ -3,9 +3,10 @@ from jinja2 import Template
 from os import getenv
 
 
-from models import catalog
+from catalog import catalog
 
 TOKEN = getenv('BOT_TOKEN')
+print(TOKEN)
 if not TOKEN:
     raise Exception('BOT_TOKEN should be specified')
 
