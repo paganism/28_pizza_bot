@@ -5,12 +5,7 @@ This telegram bot is for pizzeria menu. Also it represents admin access to pizze
 # How to Use
 
 Step 1. Register new telegram bot for development purposes, get the new token. [@BotFather](https://telegram.me/botfather)
-```
-#!bash
 
-$ # the token below is not actual, you need to register a new one
-$ BOT_TOKEN="110831855:AAE_GbIeVAUwk11O12vq4UeMnl20iADUtM" python3 bot.py
-```
 Step 2. Launch (Use python virtual environment)
 
 ```bash
@@ -30,6 +25,7 @@ $ export FLASK_APP=server.py
 $ export SECRET_KEY='your secret key'
 $ export BASIC_AUTH_PASSWORD='your admin password'
 $ export BASIC_AUTH_USERNAME='your admin username'
+$ export BOT_TOKEN='your token from step 1'
 ```
 
 Upload catalog to DB
