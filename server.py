@@ -8,8 +8,6 @@ from flask import request, Response
 from flask_admin import Admin, expose
 from flask_admin.contrib.sqla import ModelView
 from models import Pizza, Choices, db
-from flask_bootstrap import Bootstrap
-from flask_basicauth import BasicAuth
 from flask_admin.contrib import sqla
 from werkzeug.exceptions import HTTPException
 
@@ -19,8 +17,6 @@ app = Flask(__name__)
 app.config.from_object(Config)
 db.init_app(app)
 migrate = Migrate(app, db)
-bootstrap = Bootstrap(app)
-basic_auth = BasicAuth(app)
 
 
 class MyModelView(sqla.ModelView):

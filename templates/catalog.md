@@ -4,7 +4,7 @@
 *{{ entry.title }} #{{loop.index}}*
 {{ entry.description }}
     {%- for choice in entry.choices %}
-        {{ choice.title }} - *{{ choice.price }} руб.*
+        {{ choice.choice_title }} - *{{ choice.choice_price | int }} руб.*
     {%- endfor %}
 
 {% endfor %}
