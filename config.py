@@ -11,4 +11,4 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     BASIC_AUTH_USERNAME = os.environ.get('USERNAME')
     BASIC_AUTH_PASSWORD = os.environ.get('PASSWORD')
-    BOT_TOKEN=os.environ.get('BOT_TOKEN')
+    BOT_TOKEN = os.environ.get('BOT_TOKEN')
