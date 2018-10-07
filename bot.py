@@ -27,7 +27,10 @@ def greet(message):
 def show_catalog(message):
     with app.app_context():
         catalog = Pizza.query.join(Choices, Choices.pizza_id == Pizza.id).all()
-        bot.send_message(message.chat.id, catalog_tmpl.render(catalog=catalog), parse_mode='Markdown')
+        bot.send_message(
+            message.chat.id,
+            catalog_tmpl.render(catalog=catalog),
+            parse_mode='Markdown')
 
 
 if __name__ == '__main__':

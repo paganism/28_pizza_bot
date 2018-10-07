@@ -6,9 +6,10 @@ from catalog import catalog
 
 def insert_data_to_db(loaded_json):
     for pizza in loaded_json:
-        pizza_to_insert = Pizza(title=pizza['title'],
-                           description=pizza['description']
-                           )
+        pizza_to_insert = Pizza(
+            title=pizza['title'],
+            description=pizza['description']
+            )
         for choice in pizza['choices']:
             choices_to_insert = Choices(choice_title=choice['title'],
                                         choice_price=choice['price'],
