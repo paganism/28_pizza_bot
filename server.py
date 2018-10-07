@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for, redirect, make_response, request
+from flask import Flask, render_template, url_for, \
+    redirect, make_response, request
 from flask_sqlalchemy import SQLAlchemy
 from models import db
 from flask_migrate import Migrate
@@ -21,12 +22,14 @@ migrate = Migrate(app, db)
 
 class MyModelView(sqla.ModelView):
     def is_accessible(self):
+        unauthorized_client_error = 401
         auth = request.authorization
-        if not auth or (auth.username != app.config['BASIC_AUTH_USERNAME']
-                        and auth.password != app.config['BASIC_AUTH_PASSWORD']):
+        if not auth or (
+            auth.username != app.config['BASIC_AUTH_USERNAME'] \
+                and auth.password != app.config['BASIC_AUTH_PASSWORD']):
             raise HTTPException('', Response(
                 "Введите корректные имя пользователя и пароль!",
-                401,
+                unauthorized_client_error,
                 {'WWW-Authenticate': 'Basic realm="Login Required"'}
             ))
         return True

@@ -1,7 +1,26 @@
 from server import app
 from models import Pizza, Choices, db
 from sqlalchemy import exc
-from catalog import catalog
+import argparse
+import os
+import json
+
+
+def load_data(filepath):
+    with open(filepath, 'r') as f:
+        raw_data = f.read()
+    return json.loads(raw_data)
+
+
+def parse_arguments():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--path',
+        dest='path',
+        required=True,
+        help='Path to json file'
+    )
+    return parser.parse_args()
 
 
 def insert_data_to_db(loaded_json):
@@ -20,6 +39,10 @@ def insert_data_to_db(loaded_json):
 
 
 if __name__ == '__main__':
+    args = parse_arguments()
+    if not os.path.exists(args.path) or not args.path:
+        sys.exit('Некорректно указан аргумент')
+    catalog = load_data(args.path)
     with app.app_context():
         try:
             insert_data_to_db(catalog)

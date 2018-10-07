@@ -30,7 +30,7 @@ $ export BOT_TOKEN='your token from step 1'
 
 Upload catalog to DB
 ```
-$ python3 apply_data.py
+$ python3 apply_data.py --path catalog.json
 ```
 To run aaplication on localhost use:
 ```bash
